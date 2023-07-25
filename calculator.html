@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+<!-- 
+	<style>
+		nav {
+		  background-color: #333;
+		  overflow: hidden;
+		}
+	  
+		ul {
+		  list-style-type: none;
+		  margin: 0;
+		  padding: 0;
+		}
+	  
+		li {
+		  float: left;
+		}
+	  
+		li a {
+		  display: block;
+		  color: white;
+		  text-align: center;
+		  padding: 14px 16px;
+		  text-decoration: none;
+		}
+	  
+		li a:hover {
+		  background-color: #111;
+		}
+	  </style> -->
+	 
+	  
+</head>
+<body>
+	
+
+	<input type="text" id="display" readonly> <!-- Display for showing results -->
+	<br>
+	<button onclick="addNumber('1')">1</button>
+	<button onclick="addNumber('2')">2</button>
+	<button onclick="addNumber('3')">3</button>
+	<button onclick="addOperator('+')">+</button>
+	<br>
+	<button onclick="addNumber('4')">4</button>
+	<button onclick="addNumber('5')">5</button>
+	<button onclick="addNumber('6')">6</button>
+	<button onclick="addOperator('-')">-</button>
+	<br>
+	<button onclick="addNumber('7')">7</button>
+	<button onclick="addNumber('8')">8</button>
+	<button onclick="addNumber('9')">9</button>
+	<button onclick="addOperator('*')">*</button>
+	<br>
+	<button onclick="addNumber('0')">0</button>
+	<button onclick="addOperator('/')">/</button>
+	<button onclick="clearDisplay()">C</button>
+	<button onclick="calculate()">=</button>
+	
+	<script>
+
+		// Function to add a number to the display
+		function addNumber(num) {
+			document.getElementById("display").value += num;
+		}
+		
+		// Function to add an operator to the display
+		function addOperator(op) {
+			document.getElementById("display").value += " " + op + " ";
+		}
+		
+		// Function to clear the display
+		function clearDisplay() {
+			document.getElementById("display").value = "";
+		}
+		
+		// Function to calculate the result
+		function calculate() {
+			let expression = document.getElementById("display").value;
+			let result = eval(expression);
+			document.getElementById("display").value = result;
+		}
+
+	</script>
+</body>
+</html>
